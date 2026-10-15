@@ -1,0 +1,51 @@
+extends base
+
+block content
+  main.main
+    section.user-content
+      if reviews.length
+        .review-list
+          each review in reviews
+            article.review-card
+              .review-card__header
+                .review-card__tour
+                  img(
+                    src=`/img/tours/${review.tour.imageCover}`
+                    alt=review.tour.name
+                  )
+
+                  div
+                    h3.review-card__tour-name= review.tour.name
+                    p.review-card__location
+                      | #{review.tour.startLocation.description}
+
+                .review-card__rating
+                  each star in [1, 2, 3, 4, 5]
+                    if star <= review.rating
+                      span.review-card__star ★
+                    else
+                      span.review-card__star.review-card__star--empty ★
+
+              .review-card__body
+                p.review-card__text= review.review
+
+              .review-card__footer
+                span.review-card__date
+                  | Reviewed #{new Date(review.createdAt).toLocaleDateString()}
+
+                .review-card__actions
+                  a.btn.btn--small.btn--green(
+                    href=`/tour/${review.tour.slug}`
+                  ) View tour
+
+                  a.btn.btn--small.btn--outline(
+                    href=`/tour/${review.tour.slug}`
+                  ) Edit review
+
+      else
+        .empty-state
+          .empty-state__icon ✍️
+          h3 No reviews yet
+          p
+            | You haven't reviewed any tours yet.
+          a.btn.btn--green(href="/") Explore tours

@@ -1,0 +1,786 @@
+
+/* =========================================
+   NATOURS - RESPONSIVE STYLES
+   Load this file AFTER style.css
+========================================= */
+
+/* ---------- General layout ---------- */
+
+img,
+svg {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+
+body {
+  padding: clamp(0px, 2vw, 3rem);
+  overflow-wrap: break-word;
+}
+
+.main {
+  min-width: 0;
+  padding: clamp(3rem, 6vw, 8rem) clamp(2rem, 5vw, 6rem);
+}
+
+.container,
+.card-container {
+  width: 100%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading-primary {
+  max-width: 100%;
+}
+
+.btn,
+.btn-small {
+  max-width: 100%;
+}
+
+/* ---------- Tour cards ---------- */
+
+.card-container {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 7rem);
+}
+
+.card {
+  min-width: 0;
+}
+
+.card__details,
+.card__footer {
+  min-width: 0;
+  padding: 2rem;
+}
+
+.card__data {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.card__footer {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.card .btn-small,
+.card .btn {
+  white-space: normal;
+}
+
+/* ---------- Tour details page ---------- */
+
+.section-header {
+  min-height: 30rem;
+  height: 38vw;
+  max-height: 60rem;
+}
+
+.heading-box {
+  width: min(90%, 80rem);
+}
+
+.heading-box__group {
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+}
+
+.heading-box__detail:not(:last-child) {
+  margin-right: 0;
+}
+
+.section-description > * {
+  min-width: 0;
+}
+
+.overview-box,
+.description-box {
+  min-width: 0;
+}
+
+.overview-box__detail {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.section-pictures > * {
+  min-width: 0;
+}
+
+.picture-box__img {
+  height: 100%;
+}
+
+.section-map {
+  height: clamp(30rem, 55vw, 65rem);
+}
+
+.reviews {
+  grid-auto-columns: minmax(25rem, 30rem);
+}
+
+.reviews__card {
+  width: auto;
+  min-width: 0;
+}
+
+/* ---------- Header and navigation ---------- */
+
+.header {
+  min-width: 0;
+  gap: 1.5rem;
+}
+
+.nav {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.nav__el:not(:last-child) {
+  margin-right: 0;
+}
+
+.nav__search-input {
+  max-width: 100%;
+}
+
+.nav__search-input:focus {
+  width: min(25rem, 55vw);
+}
+
+.nav--user {
+  min-width: 0;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.footer__nav {
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.footer__nav li {
+  margin-left: 0;
+}
+
+.footer__copyright {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- User dashboard and settings ---------- */
+
+.user-view {
+  min-width: 0;
+}
+
+.user-view__menu {
+  min-width: 0;
+}
+
+.user-view__content {
+  min-width: 0;
+}
+
+.user-view__form-container {
+  width: 100%;
+  max-width: 68rem;
+  padding: 0 clamp(2rem, 5vw, 8rem);
+}
+
+.side-nav a:link,
+.side-nav a:visited {
+  min-width: 0;
+  padding-left: clamp(1.5rem, 3vw, 4rem);
+  padding-right: clamp(1.5rem, 3vw, 4rem);
+}
+
+.admin-nav__heading {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* ---------- Login and signup forms ---------- */
+
+.login-form,
+.signup-form {
+  width: 100%;
+  padding: clamp(2.5rem, 5vw, 5rem)
+    clamp(2rem, 5vw, 7rem);
+}
+
+.form__photo-upload {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form__user-photo {
+  flex-shrink: 0;
+}
+
+/* ---------- Alerts and booking popup ---------- */
+
+.alert {
+  width: min(90%, 65rem);
+  padding: 1.5rem 2rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  overflow-wrap: anywhere;
+}
+
+#ask-date {
+  width: min(90%, 42rem);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+#ask-date #date {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- My reviews page ---------- */
+
+.review-list {
+  width: 100%;
+  min-width: 0;
+}
+
+.review-card {
+  min-width: 0;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.review-card__header {
+  min-width: 0;
+}
+
+.review-card__tour {
+  min-width: 0;
+  flex: 1;
+}
+
+.review-card__tour > div {
+  min-width: 0;
+}
+
+.review-card__tour-name {
+  overflow-wrap: anywhere;
+}
+
+.review-card__rating {
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.review-card__text {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.review-card__footer {
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.review-card__actions {
+  flex-wrap: wrap;
+}
+
+.review-card__actions > * {
+  min-width: 0;
+}
+
+/* ---------- Create/edit review form ---------- */
+
+.section-my-review {
+  padding: clamp(2rem, 5vw, 6rem);
+}
+
+.review-fill {
+  padding-top: clamp(5rem, 10vw, 10rem);
+}
+
+.section-review__header h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  overflow-wrap: anywhere;
+}
+
+.review-form {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  font-size: 1.6rem;
+}
+
+.review-form .form__input {
+  min-width: 0;
+}
+
+.review-comment textarea {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.stars {
+  flex-wrap: wrap;
+}
+
+.star {
+  flex-shrink: 0;
+}
+
+.review-edit,
+.review-update,
+.review-submit {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   TABLETS AND SMALL LAPTOPS
+========================================= */
+
+@media screen and (max-width: 1000px) {
+  .card-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .section-description {
+    flex-direction: column;
+  }
+
+  .section-description > * {
+    flex: 1 1 auto;
+    padding: 7rem 6vw;
+  }
+
+  .description-box .description {
+    margin-right: 0;
+  }
+
+  .overview-box {
+    justify-content: flex-start;
+  }
+
+  .overview-box__group:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  .cta {
+    padding: 6rem 4rem 6rem 16rem;
+  }
+
+  .cta__img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .user-view__menu {
+    flex: 0 0 25rem;
+  }
+
+  .user-view__content {
+    padding: 5rem 0;
+  }
+
+  .user-view__form-container {
+    padding: 0 3rem;
+  }
+}
+
+/* =========================================
+   PHONES AND SMALL TABLETS
+========================================= */
+
+@media screen and (max-width: 700px) {
+  body {
+    padding: 0;
+  }
+
+  .main {
+    padding: 4rem 2rem;
+  }
+
+  .header {
+    height: auto;
+    min-height: 8rem;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .header__logo {
+    order: -1;
+    margin-bottom: 0;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .nav--tours,
+  .nav--user {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .nav__search {
+    order: 0;
+    margin-bottom: 0;
+  }
+
+  .nav__el {
+    font-size: 1.4rem;
+  }
+
+  .nav__user-img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .section-header {
+    height: 42rem;
+    min-height: 0;
+  }
+
+  .heading-box {
+    top: 42%;
+    bottom: auto;
+    width: 90%;
+  }
+
+  .heading-primary {
+    width: 100%;
+    font-size: clamp(2.8rem, 7vw, 4rem);
+  }
+
+  .heading-primary span {
+    padding: 0.7rem 1rem;
+  }
+
+  .heading-box__group {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .heading-box__detail {
+    font-size: 1.3rem;
+  }
+
+  .section-description > * {
+    padding: 5rem 2.5rem;
+  }
+
+  .section-pictures {
+    margin-top: -2rem;
+  }
+
+  .section-map {
+    height: 35rem;
+  }
+
+  .section-reviews {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .reviews {
+    padding: 3rem 0;
+    grid-auto-columns: minmax(24rem, 82vw);
+    grid-column-gap: 2rem;
+  }
+
+  .reviews__card {
+    padding: 3rem 2rem;
+  }
+
+  .section-cta {
+    padding: 7rem 2rem;
+  }
+
+  .cta {
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+
+  .cta__img {
+    display: none;
+  }
+
+  .cta__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cta__text {
+    font-size: 1.6rem;
+  }
+
+  .card-container {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 45rem;
+    gap: 3rem;
+  }
+
+  .card__picture {
+    height: 24rem;
+  }
+
+  .user-view {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .user-view__menu {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .side-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .side-nav li {
+    margin: 0;
+  }
+
+  .side-nav a:link,
+  .side-nav a:visited {
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .side-nav svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.7rem;
+  }
+
+  .admin-nav {
+    margin-top: 2rem;
+  }
+
+  .admin-nav__heading {
+    margin: 0 1rem 1rem;
+  }
+
+  .user-view__content {
+    width: 100%;
+    padding: 4rem 0;
+  }
+
+  .user-view__form-container {
+    padding: 0 2rem;
+  }
+
+  .login-form,
+  .signup-form {
+    max-width: 50rem;
+  }
+
+  .footer {
+    padding: 4rem 2rem 2rem;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer__logo {
+    grid-row: auto;
+  }
+
+  .footer__nav {
+    justify-content: center;
+  }
+
+  .footer__copyright {
+    justify-self: center;
+  }
+
+  .error {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 5rem 2rem;
+  }
+
+  .error__title {
+    flex-wrap: wrap;
+  }
+
+  .error__msg {
+    font-size: 2rem;
+  }
+
+  .review-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-card__tour {
+    width: 100%;
+  }
+
+  .review-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .review-card__actions {
+    width: 100%;
+  }
+
+  .review-card__actions a,
+  .review-card__actions button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .section-my-review {
+    padding: 3rem 1.5rem;
+  }
+
+  .review-form {
+    padding: 2rem;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media screen and (max-width: 400px) {
+  .main {
+    padding: 3rem 1.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav--tours,
+  .nav--user {
+    flex: 1 1 auto;
+  }
+
+  .nav__el {
+    font-size: 1.3rem;
+  }
+
+  .nav__search-input {
+    width: 15rem;
+  }
+
+  .nav__search-input:focus {
+    width: 18rem;
+  }
+
+  .heading-primary {
+    font-size: 2.6rem;
+  }
+
+  .heading-box__detail {
+    font-size: 1.2rem;
+  }
+
+  .section-description > * {
+    padding: 4rem 2rem;
+  }
+
+  .overview-box__label {
+    margin-right: 1rem;
+  }
+
+  .card__details,
+  .card__footer {
+    padding: 1.5rem;
+  }
+
+  .card__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card__sub-heading,
+  .card__text {
+    grid-column: auto;
+  }
+
+  .card__footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card .btn-small,
+  .card .btn {
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .login-form,
+  .signup-form {
+    padding: 2.5rem 1.8rem;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .review-card__tour img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .review-card__tour-name {
+    font-size: 1.7rem;
+  }
+
+  .review-card__actions {
+    flex-direction: column;
+  }
+
+  .review-card__actions a,
+  .review-card__actions button {
+    width: 100%;
+  }
+
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .review-edit,
+  .review-update,
+  .review-submit {
+    margin-right: 0.5rem;
+  }
+}
