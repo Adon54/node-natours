@@ -1,4 +1,6 @@
 export const displayMap = locations => {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYWRvbnM1IiwiYSI6ImNsYXBlOG1kYzBobWYzcW1rMThkc2JmYzUifQ.3_ioTx6zF5qqmqoBj8wclA';
+
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/light-v10', // style URL
