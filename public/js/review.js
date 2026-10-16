@@ -186,7 +186,6 @@ export const initReview = () => {
     });
   }
 }
-console.log('fuck')
 
 /*
 modules[name][0].call(
