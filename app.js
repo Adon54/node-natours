@@ -76,6 +76,7 @@ app.use(
           "'self'",
           "https://api.stripe.com",
           "https://api.mapbox.com",
+          "https://events.mapbox.com"
         ],
       },
     },
