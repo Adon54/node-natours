@@ -4,6 +4,7 @@ import { displayMap } from './mapbox';
 import { updateData } from './updateData';
 import { bookTour } from './stripe';
 import { initReview } from './review';
+import { showAlert } from './alert';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
@@ -123,3 +124,9 @@ if(bookBtn) {
 // }
 
 initReview()
+
+const alertMessage = document.querySelector('body').dataset.alert
+
+if (alertMessage) {
+	showAlert('success', alertMessage, 15)
+}
