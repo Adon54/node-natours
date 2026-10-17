@@ -111,7 +111,7 @@ export const initReview = () => {
 
   // -------------------- DELETE EXISTING REVIEW --------------------
 
-  if (!deleteButton) {
+  if (deleteButton) {
     deleteButton.addEventListener('click', async () => {
       const reviewId = reviewForm.dataset.reviewId;
 
