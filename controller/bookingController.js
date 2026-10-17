@@ -99,7 +99,7 @@ const createBookingCheckout = async session => {
 
     await Tour.updateOne({ "_id": tour, "startDates.date": date }, { $inc: { "startDates.$.participants": 1 } });
 
-    console.log(user, date, price, metadata)
+    console.log(user, date, price, session.metadata)
     await Booking.create({tour, date, user, price})
 }
 
