@@ -116,7 +116,7 @@ export const initReview = () => {
       const reviewId = reviewForm.dataset.reviewId;
 
       try {
-        updateButton.disabled = true;
+        deleteButton.disabled = true;
 
         const response = await fetch(`/api/v1/reviews/${reviewId}`, {method: "DELETE"})
 
