@@ -48,8 +48,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
         customer_email: req.user.email,
 
-        line_items: [
-            {
+        metadata: {
+            date
+        },
+
+        line_items: [{
             price_data: {
                 currency: 'usd',
                 unit_amount: tour.price * 100,
@@ -62,8 +65,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             },
 
             quantity: 1
-            }
-        ],
+        }],
         success_url: `${req.protocol}://${req.get('host')}/my-tours?alert=booking`,
         cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`
     })
@@ -89,8 +91,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
 const createBookingCheckout = async session => {
     const tour = session.client_reference_id
+    const date = session.metadata.date
     const user = (await User.findOne({email: session.customer_email})).id
     const price = session.line_items[0].amount / 100
+
+    await Tour.updateOne({ "_id": tour, "startDates.date": date }, { $inc: { "startDates.$.participants": 1 } });
 
     await Booking.create({tour, date, user, price})
 }
@@ -112,7 +117,6 @@ exports.webhookCheckout = async (req, res, next) => {
 
     res.status(200).send({received: true})
 }
-
 
 exports.createBooking = factory.createOne(Booking);
 

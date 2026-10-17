@@ -82,13 +82,14 @@ if (userPasswordForm) {
 	})
 }
 
+// Asking user to select starting-date to book the tour
 const options = {weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', hour12: true}
 
 const genDates = dates => `
 	<ul id="ask-date">
 		${dates.map(date => {
-		const dateObj = new Date(date);
-		return `<li id="date" data-date="${dateObj.toISOString()}">${dateObj.toLocaleDateString('en-US', options)}</li>`
+			const dateObj = new Date(date);
+			return `<li id="date" data-date="${dateObj.toISOString()}">${dateObj.toLocaleDateString('en-US', options)}</li>`
 		})}
 		<span id="close-booking">&#10005;</span>
 	</ul>
@@ -123,8 +124,10 @@ if(bookBtn) {
 //   })
 // }
 
+// Activating review upload feature
 initReview()
 
+// Show the alert if there is one
 const alertMessage = document.querySelector('body').dataset.alert
 
 if (alertMessage) {

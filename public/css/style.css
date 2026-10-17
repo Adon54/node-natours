@@ -1374,6 +1374,7 @@ body {
   background-color: #eee;
   padding: 3rem;
   border-radius: 1rem;
+  box-shadow: 1px 2px 5px #000;
 }
 
 #ask-date #date {
@@ -1513,22 +1514,18 @@ body {
   .review-card {
     padding: 2rem;
   }
-
   .review-card__header {
     align-items: flex-start;
     flex-direction: column;
   }
-
   .review-card__footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 1.5rem;
   }
-
   .review-card__actions {
     width: 100%;
   }
-
   .review-card__actions a {
     flex: 1;
     text-align: center;
@@ -1536,7 +1533,6 @@ body {
 }
 
 /* Added review form */
-
 .section-my-review {
   background: #30B785;
   padding: 6rem;
@@ -1578,7 +1574,6 @@ body {
   display: flex;
   gap: 0.5rem;
 }
-
 .star {
   border: none;
   background: transparent;
@@ -1612,12 +1607,10 @@ body {
   font-size: 1.5rem;
   resize: vertical;
 }
-
 .review-comment textarea:disabled {
   background-color: #eee;
   cursor: default;
 }
-
 .review-edit,
 .review-update,
 .review-submit {
@@ -1630,7 +1623,6 @@ body {
 }
 
 /* Switch for map zoom on-off */
-
 .switch {
   display: inline-block;
   width: 54px;
