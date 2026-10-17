@@ -95,11 +95,10 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 const createBookingCheckout = async session => {
     const tour = session.client_reference_id
 
-    const {user, date, price} = session.metadata.date
+    const {user, date, price} = session.metadata
 
     await Tour.updateOne({ "_id": tour, "startDates.date": date }, { $inc: { "startDates.$.participants": 1 } });
 
-    console.log(user, date, price, session.metadata)
     await Booking.create({tour, date, user, price})
 }
 
