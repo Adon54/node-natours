@@ -46,10 +46,13 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         payment_method_types: ['card'],
         mode: 'payment',
 
+        client_reference_id: tourId,
         customer_email: req.user.email,
 
         metadata: {
-            date
+            user: userId,
+            date,
+            price: tour.price
         },
 
         line_items: [{
@@ -91,9 +94,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
 const createBookingCheckout = async session => {
     const tour = session.client_reference_id
-    const date = session.metadata.date
-    const user = (await User.findOne({email: session.customer_email})).id
-    const price = session.line_items[0].amount / 100
+
+    const {user, date, price} = session.metadata.date
 
     await Tour.updateOne({ "_id": tour, "startDates.date": date }, { $inc: { "startDates.$.participants": 1 } });
 
